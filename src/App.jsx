@@ -80,15 +80,20 @@ function App() {
       />
 
       <div className="user-list">
-        <div className="flex">
-          <p>Name</p>
-          <p>Email</p>
+        <div className="list-header">
+          <span>Name</span>
+          <span>Email</span>
         </div>
-        {filterUser.map((user) => (
-          <p key={user.id} className="user-card">
-            {user.name} - {user.email}
-          </p>
-        ))}
+        {filterUser.length > 0 ? (
+          filterUser.map((user) => (
+            <div key={user.id} className="user-card">
+              <span className="user-name">{user.name}</span>
+              <span className="user-email">{user.email}</span>
+            </div>
+          ))
+        ) : (
+          <p className="no-result">No users found</p>
+        )}
       </div>
     </div>
   );
