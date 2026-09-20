@@ -65,6 +65,7 @@ function App() {
           <span>Category</span>
           <span className="price-col">Price</span>
         </div>
+        {/* by using ternarnary operator */}
         {filterProducts.length > 0 ? (
           filterProducts.map((prod) => (
             <div key={prod.id} className="user-card">
